@@ -11,7 +11,7 @@ on:
     - cron: '25 17 * * 2'  # Weekly update
 
 env:
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: roonserver
   BASE_IMAGE_DOCKERFILE: ./Dockerfile
   DOCKERHUB_USERNAME: jonathont
   
