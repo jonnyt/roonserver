@@ -1,4 +1,4 @@
-FROM debian:12-slim
+FROM debian:stable-slim
 LABEL org.opencontainers.image.authors="jonathont@gmail.com"
 
 ENV TZ_DATA=Los_Angeles
