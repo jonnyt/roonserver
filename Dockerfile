@@ -12,7 +12,13 @@ ENV ROON_SERVER_URL=https://download.roonlabs.net/builds/${ROON_SERVER_PKG}
 ENV ROON_DATAROOT=/data
 ENV ROON_ID_DIR=/data
 
-VOLUME [ "/app", "/data", "/music", "/backup" ]
+ADD install.sh /
+RUN chmod +x install.sh
+
+RUN mkdir -p /app /data /music /backup \
+        && /install.sh
+
+VOLUME [ "/data", "/music", "/backup" ]
 
 ADD run.sh /
 RUN chmod +x run.sh
