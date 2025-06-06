@@ -58,7 +58,7 @@ jobs:
       packages: write
 
     # When invoked by schedule, only build if the base image is out of date
-    if: ${{ needs.check.outputs.differs == 'true' ||  github.event_name != 'schedule' }}
+    # if: ${{ needs.check.outputs.differs == 'true' ||  github.event_name != 'schedule' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
