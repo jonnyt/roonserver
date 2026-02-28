@@ -5,7 +5,7 @@ ENV TZ=America/Los_Angeles
 
 RUN apt update \
         && apt -y upgrade \
-        && apt -y install --no-install-recommends bash curl bzip2 ffmpeg cifs-utils alsa-utils tzdata libicu-devel \
+        && apt -y install --no-install-recommends bash curl bzip2 ffmpeg cifs-utils alsa-utils tzdata libicu-dev \
         && rm -rf /var/lib/apt/lists/*
 
 ENV ROON_SERVER_PKG=RoonServer_linuxx64.tar.bz2
