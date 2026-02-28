@@ -1,0 +1,25 @@
+---
+
+name: Keepalive
+
+# Runs monthly and makes a trivial commit if the repo has had no activity
+# in the past 50 days, preventing GitHub from disabling scheduled workflows.
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # 1st of every month
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: gautamkrishnar/keepalive-workflow@v2
+        with:
+          time_elapsed: 50
